@@ -29,12 +29,13 @@ namespace Example002
             {
                 Console.WriteLine("Port that you provided is not a number.");
             }
-            catch (OverflowException)
+            catch (OverflowException ex)
             {
-                if(SByte.MaxValue > port)
-                {
-                    Console.WriteLine("Port that you provided is too big.");
-                }
+                Console.WriteLine("Port that you provided is too big.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Something went wrong, restart the application and try again.");
             }
         }
     }
